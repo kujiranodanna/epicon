@@ -84,7 +84,7 @@ login   :
   It is used in <a href="/https://github.com/kujiranodanna/IOT-House/blob/master/raspberrypi/usr/local/bin/pepotocosctl"> pepotocsctl </a>.
   <img width = "640" alt = "twelite_dip_monostick" src = "https://kujiranodanna.github.io/images/twelite_dip_monostick_en.png">
   
- - The following creates a script that reads the temperature and humidity from the AM2321 sensor and starts epicon.
+ - The following creates a script that reads the temperature and humidity from the AM2320 sensor and starts epicon.
 ```
 # /usr/local/bin/epicon -s 115200 -ql /dev/ttyUSBTWE-Lite -c $CMD
 # cat $CMD
