@@ -83,6 +83,7 @@ int msleep(int msec)
     perror("msleep");
     return -1;
   }
+  return 0;
 }
 
 void set_console_mode(int i)
@@ -610,7 +611,7 @@ void exec_command(int fp1,int fp2,char *command_line)
   sig_q = signal(SIGQUIT, SIG_IGN);
   sig_i = signal(SIGINT,  SIG_IGN);
   sig_t = signal(SIGTERM,  SIG_IGN);
-  for (i = 0;i < 10;i++) args[i] ='\0';
+  for (i = 0;i < 10;i++) args[i] = NULL;
   c = strtok(command_line," ");i = 0;
   while((p = strtok(NULL," ")) != NULL)  {
     args[i++] = p;
@@ -766,7 +767,7 @@ void client_socket_write(char ch)
     return;
   }
   else t_result = write(check_sockfd,&ch,1);
-  while (check_flag=read(check_sockfd,&ch1,1) <= 0);
+  while ((check_flag=read(check_sockfd,&ch1,1)) <= 0);
   ch1 &= (char)0377;
   if (ch1  != '1' )  {
     fprintf(stderr,"\n\rserver AF_UNIX NAK reply");

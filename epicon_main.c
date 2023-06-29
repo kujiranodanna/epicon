@@ -655,7 +655,7 @@ void epicon_main()
           else {
             pg_flag = 0;
           }
-          if (t_result = write(client_sockfd,"1",1) < 0) {
+          if ((t_result = write(client_sockfd,"1",1)) < 0) {
             perror("write error client socket AF_UNIX");
             raise(SIGTERM);
           }
@@ -685,7 +685,7 @@ void epicon_main()
             }
             else {
               if (AZ_flag) {
-                zmodem_check(ch,zstep_flag);
+                zmodem_check();
               }
             }
           }
