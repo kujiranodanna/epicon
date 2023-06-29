@@ -43,10 +43,10 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 extern char *mem_buff;              /* external memory buffer */
 char esc[2] = { ESC, '\0' };        /* escape charctor */
 extern pid_t ck_pid;                /* check to process id */
-char *LOG_file = '\0';              /* console log file */
-char *SF_file = '\0';               /* send character file name with delay */
-char *CM_file = '\0';               /* external command file */
-char *SB_file = '\0';               /* send binary file name */
+char *LOG_file = NULL;              /* console log file */
+char *SF_file = NULL;               /* send character file name with delay */
+char *CM_file = NULL;               /* external command file */
+char *SB_file = NULL;               /* send binary file name */
 char *argv_redirect;                /* redirect file */
 char Epicon_Socket[128];            /* external AF_Socket */
 char *ip_addr;                      /* ip net connect addres */
